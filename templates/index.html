@@ -1,3 +1,4 @@
+{%load static%}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Basic Arithmetic Calculator</title>
+    <link rel="icon" type="image/jpg" href="{% static 'images/calculator.jpg' %}">
       <style>
           .form-control {
             width: 300px;
@@ -28,14 +30,42 @@
             margin-left: 93px;
           }
 
-          
+          .image-container {
+              position: relative;
+              text-align: center;
+          }
+
+          .image-container img {
+              width: 100%;
+              max-width: 130px;
+              height: auto;
+          }
+
+          .image-text {
+              position: absolute;
+              top: 45%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-size: 13px;
+              font-weight: bold;
+              /* background: rgba(0, 0, 0, 0.5); */
+              padding: 10px 20px;
+              border-radius: 5px;
+          }
+
+
       </style>
   </head>
   <body>
     <div class="container" >
       <form action="" method="get" style="margin-left: 500px; margin-top: 100px;">
-          <div class="mb-3">
-            <label class="form-label" style="margin-left:54px;"><h3>Basic Calculator</h3></label><br>
+          <div class="mb-3" style="margin-right: 500px;">
+            <div class="image-container">
+              <img src="{% static 'images/calculator.jpg' %}" alt="Calculator">
+              <label class="image-text">Basic Calculator</label>
+          </div>
+            <!-- <label class="form-label" style="margin-left:54px;"><h3>Basic Calculator</h3></label><br> -->
                <label class="form-label mt-3" style="margin-left:79px;">Select Operation:</label>
                 <select class="form-control" name="operation" id="operation">
                     <option value="" disabled selected>Select an operation</option>
